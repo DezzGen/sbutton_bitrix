@@ -13,9 +13,9 @@
 	// подключение ланговых файлов
 	Loc::loadMessages(__FILE__);
 
-	Class apecoder_test extends CModule{
+	Class apecoder_sbutton extends CModule{
 
-		var $MODULE_ID = "apecoder.test";
+		var $MODULE_ID = "apecoder.sbutton";
 		var $MODULE_VERSION;
 		var $MODULE_VERSION_DATE;
 		var $MODULE_NAME;
@@ -27,7 +27,7 @@
 
 			include(__DIR__.'/version.php');
 
-			$this->MODULE_ID = 'apecoder.test';
+			$this->MODULE_ID = 'apecoder.sbutton';
 
 			$this->MODULE_VERSION = $arModuleVersion["VERSION"];
 			$this->MODULE_VERSION_DATE = $arModuleVersion["VERSION_DATE"];
