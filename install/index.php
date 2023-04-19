@@ -32,8 +32,8 @@
 			$this->MODULE_VERSION = $arModuleVersion["VERSION"];
 			$this->MODULE_VERSION_DATE = $arModuleVersion["VERSION_DATE"];
 
-			$this->MODULE_NAME = Loc::getMessage("APECODER_TEST_INSTALL_NAME");
-			$this->MODULE_DESCRIPTION = Loc::getMessage("APECODER_TEST_INSTALL_DESCRIPTION");
+			$this->MODULE_NAME = Loc::getMessage("APECODER_SBUTTON_INSTALL_NAME");
+			$this->MODULE_DESCRIPTION = Loc::getMessage("APECODER_SBUTTON_INSTALL_DESCRIPTION");
 
 			$this->PARTNER_NAME = "Макаров Денис Юрьевич";
 			$this->PARTNER_URI = "https://google.com";
@@ -59,14 +59,18 @@
 		}
 
 		function InstallDB()
-		{
+		{	
+			// регистрирем модуль
 			ModuleManager::RegisterModule( $this->MODULE_ID );
 			return true;
 		}
 
 		function UnInstallDB()
 		{	
+			// удаляем регистрацию модуля
 			ModuleManager::UnRegisterModule( $this->MODULE_ID );
+			// удаляем данные сохранённых опций
+			Option::delete($this->MODULE_ID);
 			return true;
 		}
 
